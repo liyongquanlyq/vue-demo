@@ -1,3 +1,4 @@
+最新的
 # vux-spa-demo
 
 > A Vue.js project
