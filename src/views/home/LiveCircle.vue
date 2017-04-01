@@ -3,7 +3,7 @@
     <x-header :left-options="{showBack:false}">彩友圈</x-header>
     <scroller lock-x height="-99px" ref="ScrollerDom">
       <div>
-        我是彩友圈...
+        我是彩友圈,
         我再加点字...
       </div>
     </scroller>
