@@ -3,7 +3,8 @@ const userModule = {
     IsLogin: false,
     UserInfo: {
       name: 'user'
-    }
+    },
+    TipStr: '未点击过'
   },
 
   getters: {// 计算属性
@@ -19,6 +20,9 @@ const userModule = {
     user_setUserInfo (state, payload) {
       state.IsLogin = true
       state.UserInfo = payload
+    },
+    user_helloTest (state, payload) {
+      state.TipStr = payload
     }
   },
 

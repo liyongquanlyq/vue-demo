@@ -5,8 +5,8 @@
       <div class="body">
         <p>{{title}}</p>
         <p>{{id}}</p>
-        <p v-if="date!==''">{{ date | timeAgo }}</p>
-        <p>{{body | unescape }}</p>
+        <p v-if="date!==''">{{ date | timeAgo }} ago</p>
+        <p v-html="body"></p>
       </div>
     </scroller>
   </div>
@@ -36,20 +36,23 @@
     methods: {
       getData: function () {
         this.$http.request({
-          method: 'post',
-          url: window.ConfigOBJ.LocalSite + '/I/?method=mc.data.news.detail',
+          method: 'get',
+          url: window.ConfigOBJ.TestSite + '/detail',
           params: {
-            nid: this.$route.params.type
+            type: 'news',
+            id: this.$route.params.type
           }
         })
         .then((response) => {
           console.log('[NewsDetail getData]接口返回:', response.data)
-          this.title = response.data.info.title
-          this.date = response.data.info.date
-          this.id = response.data.info.id
-          this.body = response.data.info.body
+          this.title = response.data.info.entity.data.title
+          this.date = response.data.info.entity.create_time
+          this.id = response.data.info.entity.id
+          this.body = response.data.info.entity.data.content
           this.$nextTick(() => {
-            this.$refs.ScrollerDom.reset()
+            setTimeout(() => {
+              this.$refs.ScrollerDom.reset()
+            }, 500)
           })
         })
         .catch(function (error) {

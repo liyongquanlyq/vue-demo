@@ -7,7 +7,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -28,11 +28,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/I':{
+      '/Api':{
         target:'http://a.okooo.com',
         changeOrigin:true,
         pathRewrite:{
-          '^/I':'I'
+          '^/Api':''
+        }
+      },
+      '/LaravelApi':{
+        target:'http://192.168.8.132:20069',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/LaravelApi':''
         }
       }
     },

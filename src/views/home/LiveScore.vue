@@ -3,8 +3,8 @@
     <x-header :left-options="{showBack:false}">直播</x-header>
     <scroller lock-x height="-99px" ref="scroller">
       <div>
-        <p v-for="item in allItems" :key="item.created" @click="jump('/news/detail/'+item.nid)">
-          {{item.title}}
+        <p v-for="item in allItems" :key="item.created" @click="jump('/circle/detail/'+item.entity.id)">
+          <img class="img" :src="item.entity.data.img"></img>{{item.entity.data.title}}
         </p>
       </div>
     </scroller>
@@ -30,14 +30,13 @@ export default {
   methods: {
     getData: function () {
       this.$http.request({
-        method: 'post',
-        url: window.ConfigOBJ.LocalSite + '/I/?method=mc.data.news.list',
+        method: 'get',
+        url: window.ConfigOBJ.TestSite + '/news',
         params: {
-          direct: 'down',
-          num: 50,
-          type1: 12,
-          p: this.currentPage,
-          type2: 22
+          id: 7642,
+          type: 'news',
+          p: 1,
+          n: 100
         }
       })
       .then((response) => {
@@ -55,5 +54,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.img{
+  width: 50px;
+}
 </style>

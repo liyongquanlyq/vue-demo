@@ -8,22 +8,22 @@
 
     <tabbar v-model="currentTypeIndex">
       <tabbar-item @on-item-click="replace('/home/index')">
-        <img slot="icon" src="../../assets/icon/okooo_home.png">   
+        <img slot="icon" src="../../assets/icon/okooo_home.png">
         <img slot="icon-active" src="../../assets/icon/okooo_homed.png">
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item @on-item-click="replace('/home/circle')">
-        <img slot="icon" src="../../assets/icon/okooo_communicate.png">   
+        <img slot="icon" src="../../assets/icon/okooo_communicate.png">
         <img slot="icon-active" src="../../assets/icon/okooo_communicated.png">
         <span slot="label">彩友圈</span>
       </tabbar-item>
       <tabbar-item @on-item-click="replace('/home/score')">
-        <img slot="icon" src="../../assets/icon/okooo_live.png">   
+        <img slot="icon" src="../../assets/icon/okooo_live.png">
         <img slot="icon-active" src="../../assets/icon/okooo_lived.png">
         <span slot="label">直播</span>
       </tabbar-item>
       <tabbar-item @on-item-click="replace('/home/account')">
-        <img slot="icon" src="../../assets/icon/okooo_user.png">          
+        <img slot="icon" src="../../assets/icon/okooo_user.png">
         <img slot="icon-active" src="../../assets/icon/okooo_usered.png">
         <span slot="label">账户</span>
       </tabbar-item>
