@@ -5,7 +5,7 @@
       <div>
         <div class="body" ref="testref">
           <div @click="jump('/news/list/12')" class="item">
-            <p>进入资讯列表</p>
+            <p class="blueColor bbd">进入资讯列表</p>
           </div>
         </div>
       </div>
@@ -26,5 +26,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+
+  .blueColor.bbd {
+    color: blue;
+  }
+
 </style>

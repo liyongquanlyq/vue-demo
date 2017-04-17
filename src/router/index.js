@@ -9,7 +9,7 @@ import Login from '@/views/user/Login'
 Vue.use(Router)
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/home/:type',
@@ -17,8 +17,11 @@ export default new Router({
       component: MainHome
     },
     {
+      path: '/news',
+      component: NewsList
+    },
+    {
       path: '/news/list/:type',
-      name: 'NewsList',
       component: NewsList
     },
     {

@@ -18,6 +18,11 @@ export default {
           this.$router.back()
         }
       }
+    },
+    goHome () {
+      if (this.$router) {
+        this.$router.go(-100)
+      }
     }
   }
 }
